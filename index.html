@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f0ff">
+    <meta name="description" content="Yagyasenna, your personal safety companion.">
+    <title>Yagyasenna | Your Safety Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">✦</span>
+            Yagyasenna
+        </a>
+
+        <div class="header-right">
+            <span class="status-dot"></span>
+            <span class="status-text">Your space, your safety</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <p class="eyebrow">YOUR PERSONAL SAFETY SPACE</p>
+            <h1>Hello, <span>beautiful soul.</span></h1>
+            <p>Your safety matters. Take a breath, you are in control.</p>
+        </section>
+
+        <section class="sos-section">
+            <div class="sos-card">
+                <div class="sos-content">
+                    <span class="sos-label">NEED HELP?</span>
+                    <h2>Your safety comes first.</h2>
+                    <p>Quick access to emergency assistance and your trusted circle.</p>
+                </div>
+
+                <button class="sos-button" id="sosButton" aria-label="Open emergency options">
+                    SOS
+                </button>
+
+                <small>Tap for emergency options</small>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR SUPPORT SYSTEM</p>
+                    <h2>Your safety toolkit</h2>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card" id="contactsCard">
+                    <div class="feature-icon lavender">♡</div>
+                    <h3>Trusted Circle</h3>
+                    <p>Keep your trusted contacts close.</p>
+                    <span class="card-link">Manage contacts →</span>
+                </article>
+
+                <article class="feature-card" id="journeyCard">
+                    <div class="feature-icon pink">⌖</div>
+                    <h3>Journey Mode</h3>
+                    <p>Set a check-in timer for your journey.</p>
+                    <span class="card-link">Start journey →</span>
+                </article>
+
+                <article class="feature-card" id="journalCard">
+                    <div class="feature-icon peach">✎</div>
+                    <h3>Safety Journal</h3>
+                    <p>Document and save personal incidents.</p>
+                    <span class="card-link">Open journal →</span>
+                </article>
+
+                <article class="feature-card" id="resourcesCard">
+                    <div class="feature-icon blue">✧</div>
+                    <h3>Safety Resources</h3>
+                    <p>Access important emergency information.</p>
+                    <span class="card-link">Explore resources →</span>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="reminder">
+            <span>✿</span>
+            <div>
+                <h3>A gentle reminder</h3>
+                <p>You deserve to feel safe, heard and respected. Your independence matters.</p>
+            </div>
+        </section>
+
+    </main>
+
+    
+<!-- TRUSTED CIRCLE SECTION -->
+
+<section class="trusted-section" id="trustedSection" hidden>
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR PEOPLE</p>
+            <h2>Your Trusted Circle</h2>
+            <p class="section-description">
+                People you can reach out to whenever you need them.
+            </p>
+        </div>
+
+        <button class="add-contact-btn" id="addContactBtn">
+            + Add Contact
+        </button>
+    </div>
+
+    <div class="contact-form-card" id="contactFormCard" hidden>
+        <h3 id="formHeading">Add a trusted contact</h3>
+
+        <form id="contactForm">
+            <label for="contactName">Full Name</label>
+            <input type="text" id="contactName"
+                   placeholder="Enter contact name" required>
+
+            <label for="contactPhone">Phone Number</label>
+            <input type="tel" id="contactPhone"
+                   placeholder="10-digit mobile number"
+                   pattern="[0-9]{10}" maxlength="10" required>
+
+            <div class="form-actions">
+                <button type="submit" class="add-contact-btn">
+                    Save Contact
+                </button>
+                <button type="button" class="cancel-btn"
+                        id="cancelContactBtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="contacts-list" id="contactsList"></div>
+
+    <button class="back-btn" id="backToHome">
+        ← Back to Home
+    </button>
+
+</section>
+ 
+    <footer>
+        <p>Made with ♡ for strength, freedom and individuality.</p>
+        <span>YAGYASENNA © 2026</span>
+    </footer>
+
+<script src="js/contacts.js"></script>
+<script src="js/app.js"></script></body>
+</html>
