@@ -8,6 +8,10 @@
     <meta name="description" content="Yagyasenna, your personal safety companion.">
     <title>Yagyasenna | Your Safety Companion</title>
     <link rel="stylesheet" href="css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
 </head>
 <body>
 
@@ -66,6 +70,7 @@
 
                 <article class="feature-card" id="journeyCard">
                     <div class="feature-icon pink">⌖</div>
+                    
                     <h3>Journey Mode</h3>
                     <p>Set a check-in timer for your journey.</p>
                     <span class="card-link">Start journey →</span>
@@ -148,11 +153,138 @@
 
 </section>
  
+
+<!-- JOURNEY MODE -->
+
+<section class="journey-section" id="journeySection" hidden>
+
+    <p class="eyebrow">TRAVEL WITH CONFIDENCE</p>
+    <h2>Your Journey</h2>
+    <p class="section-description">
+        Set a check-in time and let your safety plan stay with you.
+    </p>
+
+    <div class="journey-card">
+
+        <div id="journeySetup">
+            <h3>Where are you heading?</h3>
+
+            <form id="journeyForm">
+
+                <label for="destination">Destination</label>
+                <input type="text" id="destination"
+                       placeholder="Enter your destination" required>
+
+                <label for="duration">Check-in after</label>
+                <select id="duration">
+                    <option value="15">15 minutes</option>
+                    <option value="30" selected>30 minutes</option>
+                    <option value="45">45 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="90">1.5 hours</option>
+                    <option value="120">2 hours</option>
+                </select>
+
+                
+<div class="gps-panel">
+    <div class="gps-heading">
+        <span class="gps-icon">⌖</span>
+        <div>
+            <h4>Current Location</h4>
+            <p id="gpsStatus">Location not detected yet</p>
+        </div>
+    </div>
+
+    <button type="button" id="getLocation" class="gps-btn">
+        Detect My Location
+    </button>
+
+    <div id="locationDetails" hidden>
+        <p id="coordinates"></p>
+        <a id="mapLink" target="_blank" rel="noopener">
+            View on Google Maps ↗
+        </a>
+    </div>
+</div>
+
+
+
+                <button type="submit" class="add-contact-btn">
+                    Start My Journey
+                </button>
+
+            </form>
+        </div>
+
+        <div id="activeJourney" hidden>
+
+            <span class="journey-status" id="journeyStatus">
+                JOURNEY IN PROGRESS
+            </span>
+<div class="live-location">
+    <span class="status-dot"></span>
+    <span id="liveLocationStatus">Waiting for location permission</span>
+    <button type="button" id="shareLocation" class="gps-btn">
+        Share My Location
+    </button>
+</div>
+
+<!-- INTERACTIVE JOURNEY MAP -->
+
+<div class="map-container">
+    <div class="map-heading">
+        <h3>Your Journey Map</h3>
+        <span id="mapStatus">Waiting for location</span>
+    </div>
+
+    <div id="journeyMap"></div>
+
+    <p class="map-note">
+        Your location is displayed only in this browser.
+        Sharing requires your explicit action.
+    </p>
+</div>
+            <h3 id="journeyDestination"></h3>
+
+            <p class="countdown-label">Time remaining</p>
+
+            <div class="countdown" id="countdown">
+                30:00
+            </div>
+
+            <p id="journeyMessage">
+                Remember to check in when you arrive.
+            </p>
+
+            <div class="journey-actions">
+                <button class="add-contact-btn" id="completeJourney">
+                    I Am Safe
+                </button>
+
+                <button class="cancel-btn" id="cancelJourney">
+                    End Journey
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="back-btn" id="journeyBack">
+        ← Back to Home
+    </button>
+
+</section>
+
+
     <footer>
         <p>Made with ♡ for strength, freedom and individuality.</p>
         <span>YAGYASENNA © 2026</span>
     </footer>
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="js/contacts.js"></script>
-<script src="js/app.js"></script></body>
+<script src="js/journey.js"></script>
+<script src="js/app.js"></script>
+
+</body>
 </html>

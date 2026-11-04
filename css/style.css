@@ -413,3 +413,238 @@ footer span {
         gap: 15px;
     }
 }
+
+
+/* JOURNEY MODE */
+
+.journey-section {
+    margin-top: 45px;
+    padding: 28px;
+    background: white;
+    border: 1px solid #eee7f7;
+    border-radius: 22px;
+}
+
+.journey-card {
+    background: #f8f4ff;
+    border-radius: 18px;
+    padding: 28px;
+    margin: 25px 0;
+}
+
+.journey-card h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.journey-card label {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.journey-card input,
+.journey-card select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd0ee;
+    border-radius: 9px;
+    background: white;
+    font: inherit;
+}
+
+.journey-card form button {
+    margin-top: 22px;
+    width: 100%;
+}
+
+.journey-status {
+    display: inline-block;
+    background: #e8f5ed;
+    color: #34764c;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.journey-status.overdue {
+    background: #fff0f0;
+    color: #b63848;
+}
+
+.countdown-label {
+    color: var(--muted);
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.countdown {
+    font-size: clamp(42px, 8vw, 65px);
+    font-weight: 700;
+    color: var(--primary);
+    margin: 12px 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.journey-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.journey-section .back-btn {
+    margin-top: 10px;
+}
+
+@media(max-width: 600px) {
+    .journey-section {
+        padding: 18px;
+    }
+
+    .journey-card {
+        padding: 20px;
+    }
+}
+
+
+/* GPS LOCATION */
+
+.gps-panel {
+    margin: 22px 0;
+    padding: 18px;
+    background: #f1eaff;
+    border-radius: 14px;
+}
+
+.gps-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.gps-icon {
+    background: white;
+    color: #593581;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 25px;
+}
+
+.gps-heading h4 {
+    margin-bottom: 4px;
+}
+
+.gps-heading p,
+#coordinates {
+    color: #81778d;
+    font-size: 12px;
+}
+
+.gps-btn {
+    background: #593581;
+    color: white;
+    padding: 11px 17px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#locationDetails {
+    margin-top: 14px;
+}
+
+#locationDetails a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #593581;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.live-location {
+    background: #f1eaff;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.live-location .gps-btn {
+    margin-left: auto;
+}
+
+@media(max-width: 600px) {
+    .live-location .gps-btn {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+/* INTERACTIVE JOURNEY MAP */
+
+.map-container {
+    margin-top: 25px;
+    padding: 18px;
+    background: #f8f4ff;
+    border-radius: 18px;
+}
+
+.map-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.map-heading h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+#mapStatus {
+    color: #7653a2;
+    font-size: 11px;
+}
+
+#journeyMap {
+    width: 100%;
+    height: 340px;
+    border-radius: 14px;
+    border: 1px solid #e5d8f3;
+    z-index: 1;
+}
+
+.map-note {
+    margin-top: 12px;
+    color: #81778d;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.leaflet-container {
+    font-family: 'DM Sans', sans-serif;
+}
+
+@media(max-width: 600px) {
+    #journeyMap {
+        height: 280px;
+    }
+
+    .map-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
