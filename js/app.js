@@ -18,36 +18,81 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contactsCard")
         .addEventListener("click", () => {
 
-            homeElements.forEach(element => {
-                element.hidden = true;
-            });
+            homeElements.forEach(element => element.hidden = true);
 
             journeySection.hidden = true;
             trustedSection.hidden = false;
 
-            trustedSection.scrollIntoView({
-                behavior: "smooth"
-            });
+            trustedSection.scrollIntoView({ behavior: "smooth" });
         });
 
-    // SOS
+    // SOS MODAL
+    const sosModal = document.getElementById("sosModal");
+
     document.getElementById("sosButton")
         .addEventListener("click", () => {
+            sosModal.hidden = false;
+        });
 
-            const choice = confirm("Call emergency number 112?");
+    document.getElementById("call112")
+        .addEventListener("click", () => {
+            window.location.href = "tel:112";
+        });
 
-            if (choice) {
-                window.location.href = "tel:112";
+    document.getElementById("shareSOSLocation")
+        .addEventListener("click", () => {
+
+            if (!navigator.geolocation) {
+                alert("Location is not supported by this browser.");
+                return;
             }
+
+            navigator.geolocation.getCurrentPosition(
+                async (position) => {
+
+                    const { latitude, longitude } = position.coords;
+
+                    const locationUrl =
+                        `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+                    const shareData = {
+                        title: "My Emergency Location",
+                        text: "I may need help. Here is my current location:",
+                        url: locationUrl
+                    };
+
+                    try {
+                        if (navigator.share) {
+                            await navigator.share(shareData);
+                        } else {
+                            await navigator.clipboard.writeText(
+                                `${shareData.text} ${locationUrl}`
+                            );
+                            alert("Location link copied. You can now send it to a trusted contact.");
+                        }
+                    } catch (error) {
+                        if (error.name !== "AbortError") {
+                            alert("Unable to share location. Please try again.");
+                        }
+                    }
+                },
+                () => {
+                    alert("Unable to access your location. Please check GPS permission.");
+                },
+                { enableHighAccuracy: true, timeout: 15000 }
+            );
+        });
+
+    document.getElementById("closeSOS")
+        .addEventListener("click", () => {
+            sosModal.hidden = true;
         });
 
     // JOURNEY MODE
     document.getElementById("journeyCard")
         .addEventListener("click", () => {
 
-            homeElements.forEach(element => {
-                element.hidden = true;
-            });
+            homeElements.forEach(element => element.hidden = true);
 
             trustedSection.hidden = true;
             window.openJourney();
@@ -71,9 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             journeySection.hidden = true;
 
-            homeElements.forEach(element => {
-                element.hidden = false;
-            });
+            homeElements.forEach(element => element.hidden = false);
         });
 
 });
