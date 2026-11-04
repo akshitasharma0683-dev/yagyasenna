@@ -82,7 +82,8 @@
                     <p>Document and save personal incidents.</p>
                     <span class="card-link">Open journal →</span>
                 </article>
-
+ 
+ 
                 <article class="feature-card" id="resourcesCard">
                     <div class="feature-icon blue">✧</div>
                     <h3>Safety Resources</h3>
@@ -102,7 +103,238 @@
         </section>
 
     </main>
+           
+    
+<!-- SAFETY RESOURCES -->
+<section id="resourcesSection" class="resources-section" hidden>
 
+    <div class="resources-header">
+        <button id="resourcesBack" class="back-btn">
+            ← Back to Home
+        </button>
+
+        <p class="eyebrow">KNOW YOUR OPTIONS</p>
+        <h2>Your Safety Resources</h2>
+        <p>Important contacts and information, all in one place.</p>
+    </div>
+
+    <!-- EMERGENCY CONTACTS -->
+    <div class="resource-group">
+        <h3>Emergency Helplines</h3>
+
+        
+<div class="resource-grid">
+
+    <article class="resource-card emergency">
+        <span class="resource-icon">🚨</span>
+        <h4>Police & Emergency</h4>
+        <p>Police, fire and medical emergencies.</p>
+        <strong>112</strong>
+        <a href="tel:112" class="resource-call">Call Now</a>
+    </article>
+
+    <article class="resource-card">
+        <span class="resource-icon">🏠</span>
+        <h4>Domestic Violence Support</h4>
+        <p>Support for women experiencing domestic violence and abuse.</p>
+        <strong>181</strong>
+        <a href="tel:181" class="resource-call">Call Now</a>
+    </article>
+
+    <article class="resource-card">
+        <span class="resource-icon">💜</span>
+        <h4>Women Commission</h4>
+        <p>NCW support and referrals for women facing violence.</p>
+        <strong>14490</strong>
+        <a href="tel:14490" class="resource-call">Call Now</a>
+    </article>
+
+    <article class="resource-card">
+        <span class="resource-icon">🧠</span>
+        <h4>Mental Health Support</h4>
+        <p>Emotional support and mental health counselling.</p>
+        <strong>14416</strong>
+        <a href="tel:14416" class="resource-call">Call Now</a>
+    </article>
+
+    <article class="resource-card">
+        <span class="resource-icon">⚖️</span>
+        <h4>Free Legal Aid</h4>
+        <p>Legal guidance and free legal assistance for eligible women.</p>
+        <strong>15100</strong>
+        <a href="tel:15100" class="resource-call">Call Now</a>
+    </article>
+
+    <article class="resource-card">
+        <span class="resource-icon">💻</span>
+        <h4>Cybercrime Support</h4>
+        <p>Report cyber financial fraud and seek assistance.</p>
+        <strong>1930</strong>
+        <a href="tel:1930" class="resource-call">Call Now</a>
+    </article>
+
+</div>
+
+    </div>
+
+    <!-- ONLINE SUPPORT -->
+    <div class="resource-group">
+        <h3>Online Support</h3>
+
+        <article class="resource-link-card">
+            <div>
+                <h4>National Cyber Crime Reporting Portal</h4>
+                <p>Report online harassment, cyberstalking and other cybercrime.</p>
+            </div>
+            <a href="https://cybercrime.gov.in/"
+               target="_blank" rel="noopener">
+                Visit Portal ↗
+            </a>
+        </article>
+
+        <article class="resource-link-card">
+            <div>
+                <h4>Emergency Response System</h4>
+                <p>Learn about the official 112 emergency response system.</p>
+            </div>
+            <a href="https://112.gov.in/"
+               target="_blank" rel="noopener">
+                Visit Website ↗
+            </a>
+        </article>
+
+        <article class="resource-link-card">
+            <div>
+                <h4>National Commission for Women</h4>
+                <p>Access information about women's rights and support.</p>
+            </div>
+            <a href="https://ncw.gov.in/"
+               target="_blank" rel="noopener">
+                Visit Website ↗
+            </a>
+        </article>
+    </div>
+
+    <!-- SAFETY TIPS -->
+    <div class="resource-group">
+        <h3>Everyday Safety Tips</h3>
+
+        <div class="safety-tip">
+            <span>01</span>
+            <div>
+                <h4>Before travelling</h4>
+                <p>Share your plans with someone you trust and keep your phone charged.</p>
+            </div>
+        </div>
+
+        <div class="safety-tip">
+            <span>02</span>
+            <div>
+                <h4>While travelling</h4>
+                <p>Stay aware of your surroundings and use trusted transport options.</p>
+            </div>
+        </div>
+
+        <div class="safety-tip">
+            <span>03</span>
+            <div>
+                <h4>Online safety</h4>
+                <p>Protect personal information, use strong passwords and save evidence of online harassment.</p>
+            </div>
+        </div>
+
+        <div class="safety-tip">
+            <span>04</span>
+            <div>
+                <h4>When you feel unsafe</h4>
+                <p>Move towards a safer public place and contact emergency services or someone you trust.</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="resources-disclaimer">
+        These resources are provided for information.
+        Availability and response times may vary.
+        In an immediate emergency, call 112.
+    </p>
+
+</section>
+
+                
+<!-- SAFETY JOURNAL -->
+<section id="journalSection" class="journal-section" hidden>
+
+    <div class="journal-header">
+        <button id="journalBack" class="back-button">
+            ← Back to Home
+        </button>
+
+        <h2>Your Safety Journal</h2>
+        <p>A private space for your thoughts and experiences.</p>
+    </div>
+
+    <div class="journal-card">
+
+        <h3>Write a new entry</h3>
+
+        <form id="journalForm">
+
+            <label for="journalTitle">Title</label>
+            <input
+                type="text"
+                id="journalTitle"
+                placeholder="Give your entry a title"
+                maxlength="80"
+                required
+            >
+
+            <label for="journalCategory">Category</label>
+            <select id="journalCategory" required>
+                <option value="Personal Reflection">Personal Reflection</option>
+                <option value="Safety Concern">Safety Concern</option>
+                <option value="Uncomfortable Experience">Uncomfortable Experience</option>
+                <option value="Harassment">Harassment</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="journalMood">How are you feeling?</label>
+            <select id="journalMood" required>
+                <option value="😊 Good">😊 Good</option>
+                <option value="😐 Okay">😐 Okay</option>
+                <option value="😟 Anxious">😟 Anxious</option>
+                <option value="😢 Sad">😢 Sad</option>
+                <option value="😡 Angry">😡 Angry</option>
+                <option value="😨 Scared">😨 Scared</option>
+            </select>
+
+            <label for="journalContent">Your thoughts</label>
+            <textarea
+                id="journalContent"
+                rows="6"
+                placeholder="Write whatever is on your mind..."
+                required
+            ></textarea>
+
+            <button type="submit" class="journal-save-btn">
+                Save Journal Entry
+            </button>
+
+        </form>
+    </div>
+
+    <div class="journal-history">
+        <h3>Previous Entries</h3>
+        <div id="journalEntries">
+            <p>Your journal entries will appear here.</p>
+        </div>
+    </div>
+
+    <p class="journal-privacy">
+        🔒 Your entries are stored locally in this browser.
+        They are not encrypted or backed up.
+    </p>
+
+</section>
     
 <!-- TRUSTED CIRCLE SECTION -->
 
@@ -313,7 +545,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="js/contacts.js"></script>
 <script src="js/journey.js"></script>
+<script src="js/journal.js"></script>
 <script src="js/app.js"></script>
-
 </body>
 </html>
